@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "973747500029",
+    "firebase_url": "https://parsul-c631f-default-rtdb.firebaseio.com",
+    "project_id": "parsul-c631f",
+    "storage_bucket": "parsul-c631f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973747500029:android:1ea2ea9aa763abe8115f94",
+        "android_client_info": {
+          "package_name": "com.lemnos.parsul"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-k0JEATW_iqRCMF8vj4QIwFEWVqJ7fz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

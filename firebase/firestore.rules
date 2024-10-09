@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == document;
+    }
+
+    match /user_address/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /restaurants/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /restaurants/{parent}/menuItems/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /{path=**}/menuItems/{document} {
+      allow read: if true;
+    }
+
+
+    match /users/{parent}/orders/{document} {
+      allow create: if request.auth != null;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if request.auth.uid == parent;
+    }
+
+    match /{path=**}/orders/{document} {
+      allow read: if true;
+    }
+
+
+    match /restaurants/{parent}/categories/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/categories/{document} {
+      allow read: if true;
+    }
+
+
+    match /products/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+  }
+}
