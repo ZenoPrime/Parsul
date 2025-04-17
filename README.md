@@ -1,4 +1,4 @@
-# Parsul - AI-Powered Product Recommendation System
+# Parsul - AI-Powered Concierge Service
 
 ![Project Banner](https://via.placeholder.com/1200x400?text=Parsul+Recommendation+Engine)
 
