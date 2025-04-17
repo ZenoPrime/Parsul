@@ -1,0 +1,35 @@
+
+### 3. Postman Collection Setup
+Create `docs/Parsul.postman_collection.json`:
+```json
+{
+  "info": {
+    "name": "Parsul API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Recommendations",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"budget\": {\n        \"total\": 200000,\n        \"shipping\": 50000\n    },\n    \"preferences\": [\"mobile phones\"]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:4000/api/recommendations",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "4000",
+          "path": ["api","recommendations"]
+        }
+      }
+    }
+  ]
+}

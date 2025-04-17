@@ -1,0 +1,17 @@
+{
+  "name": "parsul",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --testPathPattern=tests/",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "git": "^0.1.5"
+  }
+}
