@@ -1,0 +1,10 @@
+^C:\USERS\MOHAMED JAWAD\DESKTOP\PARSUL\BUILD\WINDOWS\X64\CMAKEFILES\935B15360AAB3891A89CDBA24D2869BC\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

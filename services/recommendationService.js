@@ -29,7 +29,7 @@ export class RecommendationService {
       const response = await axios.post(
         'https://api.perplexity.ai/chat/completions',
         {
-          model: 'sonar-pro', // Verified working model
+          model: 'sonar', // Balanced model for general use
           messages: [{
             role: 'user',
             content: prompt

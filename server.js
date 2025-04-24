@@ -1,5 +1,12 @@
 
-import 'dotenv/config';
+// Replace explicit path with
+import 'dotenv/config';  // This already handles .env loading
+
+// Remove the manual config() call and add validation
+if (!process.env.PERPLEXITY_API_KEY) {
+  console.error('[FATAL] Missing PERPLEXITY_API_KEY in .env');
+  process.exit(1);
+}
 import express from 'express';
 import cors from 'cors';
 
@@ -14,12 +21,14 @@ console.log(envr)
 
 // Enhanced middleware with raw body verification
 app.use(cors());
+// Enhanced middleware with raw body verification
 app.use(express.json({
   verify: (req, res, buf) => {
     try {
       JSON.parse(buf.toString());
     } catch (e) {
-      throw new Error('Invalid JSON payload');
+      console.log('Invalid JSON received:', buf.toString());
+      throw new Error('Invalid JSON payload - Check for trailing commas or missing quotes');
     }
   }
 }));
@@ -41,7 +50,13 @@ app.get('/api/env-check', (req, res) => {
 
 // Uncomment and fix the recommendations route
 import recommendationsRouter from './routes/recommendations.js';
+
+// Add with other imports
+import productsRouter from './routes/products.js';
+
+// Add with other routes
 app.use('/api/recommendations', recommendationsRouter);
+app.use('/api/products', productsRouter);
 
 // Error handling middleware (add at the end)
 // Error handling middleware update
